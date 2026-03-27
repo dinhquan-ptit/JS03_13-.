@@ -224,19 +224,11 @@ body{
     flex-direction:column;
     align-items:center;
     padding:100px 0;
-    background-image:url("white2.avif");
+    background-image:url("ảnh xám.jpg");
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
 }
-
-#gioithieu h2{
-    font-size:40px;
-    margin-bottom:40px;
-    color:#5a2c0f;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
 .intro-img{
     width:80%;    
     height:50%;  
@@ -251,6 +243,139 @@ body{
     transform:scale(1.03);
     box-shadow:0 70px 70px rgba(0,0,0,0.5);
 }
+.floating-icons{
+    position:fixed;
+    right:20px;
+    bottom:50%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:9999;
+}
+
+.icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.icon:hover{
+    transform:scale(1.1);
+}
+.slider{
+    width:100%;
+    height:400px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+.slides{
+    display:flex;
+    gap:30px;
+    transition:0.5s;
+}
+
+.slide{
+    width:300px;
+    height:200px;
+    transition:0.5s;
+    opacity:0.5;
+    transform:scale(0.8) rotateY(20deg);
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+/* ảnh giữa */
+.slide.active{
+    width:450px;
+    height:280px;
+    opacity:1;
+    transform:scale(1) rotateY(0deg);
+}
+/* chữ VIDEO */
+.VIDEO{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:40px;
+    margin:10px 0 50px;
+    color:#5a2c0f;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.video-section{
+    padding:80px 0;
+    background-image:url("ảnh nền xám 3.jpg");
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+/* grid */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+    padding:0 10%;
+}
+.video-card{
+    background:#fff;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    cursor:pointer;
+    transition:0.3s;
+    text-decoration:none;
+    color:inherit;
+
+}
+
+.video-card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.video-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.video-card p{
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
+    color:#e67e22;
+}
+#popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+#popup img{
+    max-width:80%;
+    max-height:80%;
+    border-radius:15px;
+}
 </style>
 </head>
 <body>
@@ -264,7 +389,7 @@ body{
     <div class="menu-box">
         <div class="menu">
         <a href="#">TRANG CHỦ</a>
-        <a href="#gioithieu">GIỚI THIỆU</a>
+        <a href="gioithieu.html">GIỚI THIỆU</a>
         <a href="thucdon.html">THỰC ĐƠN</a>
         <a href="uudai.html">ƯU ĐÃI</a>
         <a href="lienhe.html">LIÊN HỆ</a>
@@ -333,7 +458,6 @@ body{
 
 </div>
 <div id="gioithieu">
-    <h2>GIỚI THIỆU</h2>
     <img class="intro-img" src="ẢNH GIỚI THIỆU.jpg">
 </div>
 <script>
@@ -347,6 +471,46 @@ window.addEventListener("scroll", function(){
         menu.classList.remove("fixed");
     }
 });
+</script>
+<div class="floating-icons">
+    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')">
+    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')">
+</div>
+<div class="video-section">
+
+    <h2 class="VIDEO">_ VIDEO _</h2><br>
+
+    <div class="video-grid">
+        <a href="https://youtu.be/2I9SYt4oJ8Q" target="_blank" class="video-card">
+            <img src="VIDEO1 (1).png">
+            <p>Phở bò NAM ĐỊNH - Hương vị trăm năm</p>
+        </a>
+
+        <a href="https://youtu.be/vZvCmine8W8" target="_blank" class="video-card">
+            <img src="VIDEO 2.png">
+            <p>Phân biệt PHỞ NAM ĐỊNH - PHỞ HÀ NỘI</p>
+        </a>
+
+        <a href="https://youtu.be/eI51O8gPGKk" target="_blank" class="video-card">
+            <img src="VIDEO 3.png">
+            <p>KHÁM PHÁ QUÁN PHỞ TRUYỀN THỐNG</p>
+        </a>
+    </div>
+
+</div>
+<div id="popup" onclick="closeImage()">
+    <img id="popupImg">
+</div>
+<script>
+function openImage(el){
+    let img = el.querySelector("img").src;
+    document.getElementById("popup").style.display = "flex";
+    document.getElementById("popupImg").src = img;
+}
+
+function closeImage(){
+    document.getElementById("popup").style.display = "none";
+}
 </script>
 </body>
 </html>
