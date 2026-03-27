@@ -7,6 +7,9 @@
 <title>THỰC ĐƠN PHỞ CỒ NAM ĐỊNH</title>
 
 <style>
+html{
+    scroll-behavior: smooth;
+}
 
 body{
     margin:0;
@@ -14,8 +17,8 @@ body{
     background:#f5f5f5;
 }
 
+/* ===== HEADER (#d1) ===== */
 #d1{
-  display: block;
     position:relative;
     height:50vw;
     background-image:
@@ -24,17 +27,21 @@ body{
     background-size:cover;
     background-position:center;
 }
+
+/* logo */
 .logo{
     position:absolute;
     top:15px;
     left:50%;
     transform:translateX(-50%);
 }
+
+/* search */
 .search-box{
     position:absolute;
     top:15px;
-    right:5%;
-    padding:15px 20px;
+    right:8%;
+    padding:20px 20px;
     border-radius:20px;
     border:none;
 }
@@ -48,6 +55,18 @@ body{
     border-radius:50px;
     background:rgba(255,255,255,0.9);
     box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    transition: all 0.4s ease;
+}
+
+.menu-box.fixed{
+    position:fixed;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:90%;
+    border-radius:0;
+    z-index:9999;
+    animation: slideDown 0.4s ease;
 }
 
 .menu{
@@ -55,7 +74,9 @@ body{
     justify-content:space-between;
     align-items:center;
     gap:30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .menu a{
     margin:0;
     font-weight:bold;
@@ -64,44 +85,38 @@ body{
     text-decoration:none;
     color:black;
     display:inline-block;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .menu a:hover{
     color:#e67e22;
     transform:translateY(-5px);
 }
-
-.order-box{
-    margin-top:50px;
-    text-align:center;
-}
-
-.btn-order{
+.btn{
     background:#e67e22;
-    color:white;
+    color:#fff;
     border:none;
-    padding:15px 40px;
-    font-size:18px;
-    border-radius:40px;
+    padding:10px 20px;
+    border-radius:25px;
     cursor:pointer;
     font-weight:bold;
-    transition:0.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    transition:0.15s;
 }
 
-.btn-order:hover{
-    background:#cf711f;
-    transform:translateY(-3px);
+.btn:hover{ 
+    background:#cf711f; 
 }
 
-.btn-order:active{
-    transform:scale(0.95);
+.btn:active,
+.order-submit:active{
+    transform:scale(1.2);
 }
 .text{
     position:absolute;
-    top:80px;
+    top:75px;
     left:50%;
     transform:translate(-50%,-50%);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .text p{
@@ -110,8 +125,6 @@ body{
     font-weight:bold;
     animation:nhay 1s infinite;
 }
-
-
 .arrow{
     position:absolute;
     bottom:0;
@@ -129,8 +142,30 @@ body{
 .arrow3{ width:15%; left:18%; animation-duration:6s; }
 .arrow4{ width:12%; right:4%; animation-duration:4.5s; }
 .arrow5{ width:12%; left:4%; animation-duration:5.5s; }
+/*lo go vị trí , tìm kiếm */
+.floating-icons{
+    position:fixed;
+    right:20px;
+    bottom:50%;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    z-index:9999;
+}
+.icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+    padding:10px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.3);
+    cursor:pointer;
+    transition:0.3s;
+}
 
-
+.icon:hover{
+    transform:scale(1.1);
+}
 #menu-full{
     padding:80px 5%;
     text-align:center;
@@ -139,11 +174,11 @@ body{
     background-position:center;
     background-attachment:fixed;
 }
-
 .menu-title{
     font-size:40px;
     margin-bottom:50px;
     color:#5a2c0f;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .menu-tabs{
     display:flex;
@@ -260,7 +295,11 @@ body{
 </head>
 
 <body>
-  <div id="d1">
+<div class="floating-icons">
+    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')">
+    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')">
+</div>
+<div id="d1">
 
     <img class="logo" src="https://icolor.vn/wp-content/uploads/2024/09/Logo-quan-pho-7.jpg" width="90px">
 
@@ -730,6 +769,18 @@ function showMenu(id){
 window.onload = function(){
     showMenu("pho");
 }
+</script>
+<script>
+const menu = document.querySelector(".menu-box");
+const menuTop = menu.offsetTop;
+
+window.addEventListener("scroll", function(){
+    if(window.scrollY >= menuTop){
+        menu.classList.add("fixed");
+    } else {
+        menu.classList.remove("fixed");
+    }
+});
 </script>
 <div class="order-box">
 
