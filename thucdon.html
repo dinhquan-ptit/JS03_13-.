@@ -290,6 +290,35 @@ body{
     height:18px;
     cursor:pointer;
 }
+/* ===== CHỌN MÓN ===== */
+.food-info label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    margin-top:10px;
+    cursor:pointer;
+    font-weight:bold;
+    color:#444;
+}
+
+.food-info input[type="checkbox"]{
+    width:18px;
+    height:18px;
+    cursor:pointer;
+    accent-color:#e67e22;
+}
+
+.tick{
+    font-size:14px;
+    transition:0.2s;
+}
+
+/* khi chọn */
+.food-info input[type="checkbox"]:checked + .tick{
+    color:#e67e22;
+    transform:scale(1.1);
+}
 </style>
 
 </head>
@@ -358,8 +387,7 @@ body{
           
             <label>
           <input type="checkbox" name="order" value="Phở tái 30k">
-          <span class="tick"></span>
-
+          <span class="tick">Chọn món</span>
             </label>
           
         </div>
@@ -372,7 +400,7 @@ body{
           <p>30k</p>
           <label>
   <input type="checkbox" name="order" value="Phở chín 30k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -385,7 +413,7 @@ body{
           <p>50k</p>
           <label>
   <input type="checkbox" name="order" value="Phở đặc biệt 50k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -398,20 +426,20 @@ body{
         <p>30k</p>
         <label>
             <input type="checkbox" name="order" value="Phở tái chín 30k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
 </div>
 
 <div class="food-card">
-    <img src="monan/photainam.jpg">
+    <img src="monan/photinam.jpg">
     <div class="food-info">
         <h3>Phở tái nạm</h3>
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Phở tái nạm 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -424,7 +452,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Phở tái gầu 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -437,7 +465,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Phở tái bắp 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -450,7 +478,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Phở tái lăn 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -463,7 +491,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Phở áp chảo 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -477,7 +505,7 @@ body{
           
             <label>
   <input type="checkbox" name="order" value="Phở xào 55k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -500,7 +528,7 @@ body{
           <p>50k</p>
           <label>
   <input type="checkbox" name="order" value="Cơm rang 50k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -513,7 +541,7 @@ body{
           <p>40k</p>
           <label>
   <input type="checkbox" name="order" value="Mỳ xào 40k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -526,7 +554,7 @@ body{
         <p>25k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang trứng 25k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -539,7 +567,7 @@ body{
         <p>30k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang xúc xích 30k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -552,7 +580,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang thập cẩm 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -565,7 +593,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang dưa bò 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -578,7 +606,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang cải bò 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -591,7 +619,7 @@ body{
         <p>35k</p>
         <label>
             <input type="checkbox" name="order" value="Cơm rang đùi gà 35k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -604,7 +632,7 @@ body{
         <p>40k</p>
         <label>
             <input type="checkbox" name="order" value="Bò xào rau cải 40k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -627,7 +655,7 @@ body{
           <p>10k</p>
           <label>
   <input type="checkbox" name="order" value="Pepsi 10k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -640,7 +668,7 @@ body{
           <p>10k</p>
           <label>
   <input type="checkbox" name="order" value="7up 10k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -653,7 +681,7 @@ body{
           <p>10k</p>
           <label>
   <input type="checkbox" name="order" value="Aquafina 10k">
-  <span class="tick"></span>
+  <span class="tick">Chọn món</span>
 
 </label>
         </div>
@@ -666,7 +694,7 @@ body{
         <p>10k</p>
         <label>
             <input type="checkbox" name="order" value="Mirinda 10k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -679,7 +707,7 @@ body{
         <p>15k</p>
         <label>
             <input type="checkbox" name="order" value="Nước tăng lực 15k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -692,7 +720,7 @@ body{
         <p>15k</p>
         <label>
             <input type="checkbox" name="order" value="Rockstar 15k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -705,7 +733,7 @@ body{
         <p>15k</p>
         <label>
             <input type="checkbox" name="order" value="Cam ép Twister 15k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -718,7 +746,7 @@ body{
         <p>10k</p>
         <label>
             <input type="checkbox" name="order" value="Trà ô long Tea+ 10k">
-            <span class="tick"></span>
+            <span class="tick">Chọn món</span>
 
         </label>
     </div>
@@ -784,7 +812,7 @@ window.addEventListener("scroll", function(){
 </script>
 <div class="order-box">
 
-    <button class="btn-order" onclick="datHang()">
+    <button class="btn" onclick="datHang()">
         Đặt Món
     </button>
 
