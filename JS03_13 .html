@@ -111,8 +111,7 @@ body{
     background:#cf711f; 
 }
 
-.btn:active,
-.order-submit:active{
+.btn:active{
     transform:scale(1.2);
 }
 
@@ -129,9 +128,8 @@ body{
     margin:0;
     color:#c75619;
     font-weight:bold;
-    animation:nhay 1s infinite;
-}
 
+}
 /* arrows */
 .arrow{
     position:absolute;
@@ -194,8 +192,7 @@ body{
 }
 
 .food-card p,
-.food-card h3,
-.food-card label{
+.food-card h3{
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -212,12 +209,21 @@ body{
     color:#c0392b;
     font-weight:bold;
 }
-
 .food-info label{
-    display:block;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
     margin-top:10px;
+    cursor:pointer;
+    font-weight:bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
+.food-info input[type="checkbox"]{
+    transform:scale(1.2);
+    cursor:pointer;
+}
 /* ===== GIỚI THIỆU ===== */
 #gioithieu{
     display:flex;
@@ -253,6 +259,10 @@ body{
     gap:15px;
     z-index:9999;
 }
+.floating-icons span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:#f5f5f5
+}
 .icon{
     width:60px;
     height:60px;
@@ -263,7 +273,41 @@ body{
     cursor:pointer;
     transition:0.3s;
 }
+/*nút gọi điện */
+.goidien{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    height:60px;
+    padding:0 20px;
+    border-radius:30px;
+    background:#e74c3c;
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
 
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    z-index:99999;
+
+    transition:0.3s;
+    animation: rungNgang 1.2s infinite;
+}
+
+/* hover */
+.goidien:hover{
+    transform:scale(1.1);
+}
+
+/* lắc nhẹ */
+@keyframes rungNgang{
+    0%{ transform:translateX(0); }
+    25%{ transform:translateX(5px); }
+    50%{ transform:translateX(-5px); }
+    75%{ transform:translateX(5px); }
+    100%{ transform:translateX(0); }
+}
 .icon:hover{
     transform:scale(1.1);
 }
@@ -320,24 +364,6 @@ body{
     font-weight:bold;
     color:#e67e22;
 }
-#popup{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.8);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:99999;
-}
-
-#popup img{
-    max-width:80%;
-    max-height:80%;
-    border-radius:15px;
-}
 </style>
 </head>
 <body>
@@ -385,6 +411,10 @@ body{
                 <div class="food-info">
                     <h3>Phở Đặc Biệt</h3>
                     <p>50k</p>
+                <label>
+                    <input type="checkbox" name="mon" value="Phở Đặc Biệt">
+                    Chọn món
+                </label>
                 </div>
             </div>
 
@@ -393,6 +423,10 @@ body{
                 <div class="food-info">
                     <h3>Mỳ Xào Hải Sản</h3>
                     <p>40k</p>
+                <label>
+                    <input type="checkbox" name="mon" value="Mỳ Xào Hải Sản">
+                    Chọn món
+                </label>
                 </div>
             </div>
 
@@ -401,6 +435,10 @@ body{
                 <div class="food-info">
                     <h3>Cơm Rang Thập Cẩm</h3>
                     <p>50k</p>
+                <label>
+                    <input type="checkbox" name="mon" value="Cơm Rang Thập Cẩm">
+                    Chọn món
+                </label>
                 </div>
             </div>
 
@@ -409,6 +447,10 @@ body{
                 <div class="food-info">
                     <h3>Phở Xào Bò</h3>
                     <p>55k</p>
+                <label>
+                    <input type="checkbox" name="mon" value="Phở Xào Bò">
+                    Chọn món
+                </label>
                 </div>
             </div>
 
@@ -416,7 +458,7 @@ body{
 
 </div>
 <div id="gioithieu">
-    <img class="intro-img" src="ẢNH GIỚI THIỆU.jpg">
+    <img class="intro-img" src="ảnh giới thiệu trang.jpg">
 </div>
 <script>
 const menu = document.querySelector(".menu-box");
@@ -431,8 +473,12 @@ window.addEventListener("scroll", function(){
 });
 </script>
 <div class="floating-icons">
-    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')">
-    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')">
+    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')" title="TÌM MÓN">
+    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')" title="TRA VỊ TRÍ">
+    <a href="tel:0363005144" class="goidien">
+        <img src="ảnh gọi điện.png" style="width:30px; margin-right:10px;">
+        <span>GỌI NGAY</span>
+    </a>
 </div>
 <div class="video-section">
 
@@ -454,21 +500,8 @@ window.addEventListener("scroll", function(){
             <p>KHÁM PHÁ QUÁN PHỞ TRUYỀN THỐNG</p>
         </a>
     </div>
-
-</div>
-<div id="popup" onclick="closeImage()">
-    <img id="popupImg">
 </div>
 <script>
-function openImage(el){
-    let img = el.querySelector("img").src;
-    document.getElementById("popup").style.display = "flex";
-    document.getElementById("popupImg").src = img;
-}
-
-function closeImage(){
-    document.getElementById("popup").style.display = "none";
-}
 </script>
 </body>
 </html>
