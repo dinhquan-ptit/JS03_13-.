@@ -491,14 +491,51 @@ main{
     height: 42px;
   }
 }
+/*nút gọi điện */
+.goidien{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    height:60px;
+    padding:0 20px;
+    border-radius:30px;
+    background:#e74c3c;
+    color:#fff;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    z-index:99999;
+
+    transition:0.3s;
+    animation: rungNgang 1.2s infinite;
+}
+
+/* hover */
+.goidien:hover{
+    transform:scale(1.1);
+}
+@keyframes rungNgang{
+    0%{ transform:translateX(0); }
+    25%{ transform:translateX(5px); }
+    50%{ transform:translateX(-5px); }
+    75%{ transform:translateX(5px); }
+    100%{ transform:translateX(0); }
+}
 </style>
 
 </head>
 
 <body>
 <div class="floating-icons">
-    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')">
-    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')">
+    <img src="icon tìmmkieems.jpg" class="icon" onclick="alert('Mở tìm kiếm')" title="TÌM MÓN">
+    <img src="bản đồ.jpg" class="icon" onclick="alert('Mở bản đồ')" title="TRA VỊ TRÍ">
+    <a href="tel:0363005144" class="goidien">
+        <img src="ảnh gọi điện.png" style="width:30px; margin-right:10px;">
+        <span>GỌI NGAY</span>
+    </a>
 </div>
 <div id="d1">
 
@@ -512,7 +549,7 @@ main{
         <a href="gioithieu.html">GIỚI THIỆU</a>
         <a href="#menu-full">THỰC ĐƠN</a>
         <a href="uudai.html">ƯU ĐÃI</a>
-        <a href="lienhe.html">LIÊN HỆ</a>
+        <a href="#lienhe">LIÊN HỆ</a>
         <a href="danhgia.html">ĐÁNH GIÁ</a>
             <button class="btn">Đặt Món</button>
         </div>
@@ -686,101 +723,99 @@ main{
       </div>
     </div>
   </div>
-
-
-  <div class="category" id="comrang">
-
+<!----- cơm rang ---->
+<div class="category" id="comrang">
 <h2 class="category-title">Cơm rang</h2>
 
 <div class="food-grid">
 
 <div class="food-card">
-<img src="monan/comrang.jpg">
+    <img src="monan/comrang.jpg">
 <div class="food-info">
-<h3>Cơm rang</h3>
-<p>50k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang 50k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang</h3>
+    <p>50k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang 50k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangtrung.jpg">
+    <img src="monan/comrangtrung.jpg">
 <div class="food-info">
-<h3>Cơm rang trứng</h3>
-<p>25k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang trứng 25k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang trứng</h3>
+    <p>25k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang trứng 25k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangxucxich.jpg">
+    <img src="monan/comrangxucxich.jpg">
 <div class="food-info">
-<h3>Cơm rang xúc xích</h3>
-<p>30k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang xúc xích 30k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang xúc xích</h3>
+    <p>30k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang xúc xích 30k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangthapcam.jpg">
+    <img src="monan/comrangthapcam.jpg">
 <div class="food-info">
-<h3>Cơm rang thập cẩm</h3>
-<p>35k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang thập cẩm 35k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang thập cẩm</h3>
+    <p>35k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang thập cẩm 35k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangduabo.jpg">
+    <img src="monan/comrangduabo.jpg">
 <div class="food-info">
-<h3>Cơm rang dưa bò</h3>
-<p>35k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang dưa bò 35k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang dưa bò</h3>
+    <p>35k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang dưa bò 35k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangcaibo.jpg">
+    <img src="monan/comrangcaibo.jpg">
 <div class="food-info">
-<h3>Cơm rang cải bò</h3>
-<p>35k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang cải bò 35k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang cải bò</h3>
+    <p>35k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang cải bò 35k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/comrangduiga.jpg">
+    <img src="monan/comrangduiga.jpg">
 <div class="food-info">
-<h3>Cơm rang đùi gà</h3>
-<p>35k</p>
-<label>
-<input type="checkbox" name="order" value="Cơm rang đùi gà 35k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Cơm rang đùi gà</h3>
+    <p>35k</p>
+    <label>
+    <input type="checkbox" name="order" value="Cơm rang đùi gà 35k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 </div>
 </div>
-
+<!----- mỳ ---->
 <div class="category" id="my">
 
 <h2 class="category-title">Mỳ</h2>
@@ -788,26 +823,26 @@ main{
 <div class="food-grid">
 
 <div class="food-card">
-<img src="monan/myxao.jpg">
+    <img src="monan/myxao.jpg">
 <div class="food-info">
-<h3>Mỳ xào</h3>
-<p>40k</p>
-<label>
-<input type="checkbox" name="order" value="Mỳ xào 40k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Mỳ xào</h3>
+    <p>40k</p>
+    <label>
+    <input type="checkbox" name="order" value="Mỳ xào 40k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
 <div class="food-card">
-<img src="monan/boxaoraucai.jpg">
+    <img src="monan/boxaoraucai.jpg">
 <div class="food-info">
-<h3>Bò xào rau cải</h3>
-<p>40k</p>
-<label>
-<input type="checkbox" name="order" value="Bò xào rau cải 40k">
-<span class="tick">Chọn món</span>
-</label>
+    <h3>Bò xào rau cải</h3>
+    <p>40k</p>
+    <label>
+    <input type="checkbox" name="order" value="Bò xào rau cải 40k">
+    <span class="tick">Chọn món</span>
+    </label>
 </div>
 </div>
 
@@ -993,7 +1028,7 @@ window.addEventListener("scroll", function(){
 </div>
 
 <!-- Đặt footer ở cuối body -->
-<footer class="pho-footer">
+<footer id="lienhe" class="pho-footer">
   <div class="pho-footer__inner">
     <!-- Cột 1 -->
     <div class="pho-footer__col pho-footer__brand">
@@ -1062,7 +1097,6 @@ window.addEventListener("scroll", function(){
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
