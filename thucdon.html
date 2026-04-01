@@ -111,6 +111,54 @@ body{
 .order-submit:active{
     transform:scale(1.2);
 }
+/* ===== DROPDOWN MENU ===== */
+.dropdown{
+    position: relative;
+}
+
+/* menu con */
+.dropdown-menu{
+    position: absolute;
+    top: 120%;
+    left: 0;
+
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+    padding: 10px 0;
+    min-width: 180px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+
+    transition: 0.3s;
+    z-index: 999;
+}
+
+/* từng item */
+.dropdown-menu a{
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: normal;
+    transition: 0.25s;
+}
+
+.dropdown-menu a:hover{
+    background: #e67e22;
+    color: white;
+    padding-left: 25px;
+}
+
+/* hover để hiện menu */
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 .text{
     position:absolute;
     top:75px;
@@ -545,13 +593,21 @@ main{
 
     <div class="menu-box">
         <div class="menu">
-            <a href="JS03_13 .html">TRANG CHỦ</a>
-        <a href="gioithieu.html">GIỚI THIỆU</a>
-        <a href="#menu-full">THỰC ĐƠN</a>
+        <a href="JS03_13 .html">TRANG CHỦ</a>
+        <a href="gioithieu.html#tranggioithieu">GIỚI THIỆU</a>
+        <div class="dropdown">
+            <a href="thucdon.html#menu-full">THỰC ĐƠN</a>
+            <div class="dropdown-menu">
+                <a href="thucdon.html#pho">CÁC MÓN PHỞ</a>
+                <a href="thucdon.html#my">CÁC MÓN MÌ</a>
+                <a href="thucdon.html#comrang">CƠM RANG</a>
+                <a href="thucdon.html#nuoc">NƯỚC UỐNG</a>
+            </div>
+        </div>
         <a href="uudai.html">ƯU ĐÃI</a>
         <a href="#lienhe">LIÊN HỆ</a>
         <a href="danhgia.html">ĐÁNH GIÁ</a>
-            <button class="btn">Đặt Món</button>
+        <button class="btn">Đặt Món</button>
         </div>
     </div>
 
@@ -1097,6 +1153,7 @@ window.addEventListener("scroll", function(){
       </div>
     </div>
   </div>
+</footer>
 </body>
 
 </html>
