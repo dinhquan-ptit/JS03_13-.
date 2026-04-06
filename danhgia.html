@@ -444,9 +444,23 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.stars {
-    color: gold;
-    font-size: 18px;
+.rating{
+    font-size:30px;
+    margin:20px 0;
+}
+
+.star{
+    cursor:pointer;
+    color:#ccc;
+    transition:0.2s;
+}
+
+.star:hover{
+    transform:scale(1.2);
+}
+
+.star.active{
+    color:#f1c40f;
 }
 
 .ten {
@@ -511,7 +525,7 @@ button {
         <a href="uudai.html#phanuudai">ƯU ĐÃI</a>
         <a href="#lienhe">LIÊN HỆ</a>
         <a href="danhgia.html#phandanhgia">ĐÁNH GIÁ</a>
-        <button class="btn">Đặt Món</button>
+        <a href="datban.html" class="btn" target="_blank">Đặt bàn</a>
         </div>
     </div>
 
@@ -615,13 +629,17 @@ button {
 
     <textarea id="noidung" placeholder="Viết đánh giá..."></textarea>
 
-    <select id="sao">
-        <option value="5">5 sao ⭐⭐⭐⭐⭐</option>
-        <option value="4">4 sao ⭐⭐⭐⭐</option>
-        <option value="3">3 sao ⭐⭐⭐</option>
-        <option value="2">2 sao ⭐⭐</option>
-        <option value="1">1 sao ⭐</option>
-    </select>
+    <div class="rating">
+
+    <span class="star" data-value="1">★</span>
+    <span class="star" data-value="2">★</span>
+    <span class="star" data-value="3">★</span>
+    <span class="star" data-value="4">★</span>
+    <span class="star" data-value="5">★</span>
+
+</div>
+
+<input type="hidden" id="sao" value="0">
 
     <button onclick="guiDanhGia()">Gửi đánh giá</button>
 </div>
@@ -710,6 +728,30 @@ window.addEventListener("scroll", function(){
       </div>
     </div>
   </div>
+  <script>
+
+let stars = document.querySelectorAll(".star");
+let ratingValue = document.getElementById("sao");
+
+stars.forEach(star => {
+
+    star.addEventListener("click", function(){
+
+        let value = this.getAttribute("data-value");
+
+        ratingValue.value = value;
+
+        stars.forEach(s => s.classList.remove("active"));
+
+        for(let i = 0; i < value; i++){
+            stars[i].classList.add("active");
+        }
+
+    });
+
+});
+
+</script>
 </footer>
 </body>
 </html>
